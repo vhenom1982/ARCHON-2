@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\CLOUD\\GOOGLE DRIVE\\PRINTER-FILES\\PROJECT\\DOLE ARCHON SYSTEM 2 for HITACHI IJP\\SOURCE\\ARCHON SYSTEM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1930D7F6-87CE-498D-A60B-B7649DDA9ED8}|ARCHON SYSTEM\\ARCHON SYSTEM.csproj|f:\\cloud\\google drive\\printer-files\\project\\dole archon system 2 for hitachi ijp\\source\\archon system\\archon system\\frmusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1930D7F6-87CE-498D-A60B-B7649DDA9ED8}|ARCHON SYSTEM\\ARCHON SYSTEM.csproj|solutionrelative:archon system\\frmusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1930D7F6-87CE-498D-A60B-B7649DDA9ED8}|ARCHON SYSTEM\\ARCHON SYSTEM.csproj|F:\\CLOUD\\GOOGLE DRIVE\\PRINTER-FILES\\PROJECT\\DOLE ARCHON SYSTEM 2 for HITACHI IJP\\SOURCE\\ARCHON SYSTEM\\archon system\\archon library\\dblibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1930D7F6-87CE-498D-A60B-B7649DDA9ED8}|ARCHON SYSTEM\\ARCHON SYSTEM.csproj|solutionrelative:archon system\\archon library\\dblibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1930D7F6-87CE-498D-A60B-B7649DDA9ED8}|ARCHON SYSTEM\\ARCHON SYSTEM.csproj|F:\\CLOUD\\GOOGLE DRIVE\\PRINTER-FILES\\PROJECT\\DOLE ARCHON SYSTEM 2 for HITACHI IJP\\SOURCE\\ARCHON SYSTEM\\archon system\\frmusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1930D7F6-87CE-498D-A60B-B7649DDA9ED8}|ARCHON SYSTEM\\ARCHON SYSTEM.csproj|solutionrelative:archon system\\frmusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1930D7F6-87CE-498D-A60B-B7649DDA9ED8}|ARCHON SYSTEM\\ARCHON SYSTEM.csproj|F:\\CLOUD\\GOOGLE DRIVE\\PRINTER-FILES\\PROJECT\\DOLE ARCHON SYSTEM 2 for HITACHI IJP\\SOURCE\\ARCHON SYSTEM\\archon system\\archon library\\archlibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1930D7F6-87CE-498D-A60B-B7649DDA9ED8}|ARCHON SYSTEM\\ARCHON SYSTEM.csproj|solutionrelative:archon system\\archon library\\archlibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "archLibrary.cs",
+              "DocumentMoniker": "F:\\CLOUD\\GOOGLE DRIVE\\PRINTER-FILES\\PROJECT\\DOLE ARCHON SYSTEM 2 for HITACHI IJP\\SOURCE\\ARCHON SYSTEM\\ARCHON SYSTEM\\Archon Library\\archLibrary.cs",
+              "RelativeDocumentMoniker": "ARCHON SYSTEM\\Archon Library\\archLibrary.cs",
+              "ToolTip": "F:\\CLOUD\\GOOGLE DRIVE\\PRINTER-FILES\\PROJECT\\DOLE ARCHON SYSTEM 2 for HITACHI IJP\\SOURCE\\ARCHON SYSTEM\\ARCHON SYSTEM\\Archon Library\\archLibrary.cs",
+              "RelativeToolTip": "ARCHON SYSTEM\\Archon Library\\archLibrary.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T06:03:22.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dbLibrary.cs",
+              "DocumentMoniker": "F:\\CLOUD\\GOOGLE DRIVE\\PRINTER-FILES\\PROJECT\\DOLE ARCHON SYSTEM 2 for HITACHI IJP\\SOURCE\\ARCHON SYSTEM\\ARCHON SYSTEM\\Archon Library\\dbLibrary.cs",
+              "RelativeDocumentMoniker": "ARCHON SYSTEM\\Archon Library\\dbLibrary.cs",
+              "ToolTip": "F:\\CLOUD\\GOOGLE DRIVE\\PRINTER-FILES\\PROJECT\\DOLE ARCHON SYSTEM 2 for HITACHI IJP\\SOURCE\\ARCHON SYSTEM\\ARCHON SYSTEM\\Archon Library\\dbLibrary.cs",
+              "RelativeToolTip": "ARCHON SYSTEM\\Archon Library\\dbLibrary.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAiwFwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T06:03:01.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmUserManager.cs",
+              "DocumentMoniker": "F:\\CLOUD\\GOOGLE DRIVE\\PRINTER-FILES\\PROJECT\\DOLE ARCHON SYSTEM 2 for HITACHI IJP\\SOURCE\\ARCHON SYSTEM\\ARCHON SYSTEM\\frmUserManager.cs",
+              "RelativeDocumentMoniker": "ARCHON SYSTEM\\frmUserManager.cs",
+              "ToolTip": "F:\\CLOUD\\GOOGLE DRIVE\\PRINTER-FILES\\PROJECT\\DOLE ARCHON SYSTEM 2 for HITACHI IJP\\SOURCE\\ARCHON SYSTEM\\ARCHON SYSTEM\\frmUserManager.cs",
+              "RelativeToolTip": "ARCHON SYSTEM\\frmUserManager.cs",
+              "ViewState": "AgIAAHcDAAAAAAAAAAAmwNcDAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T05:46:49.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmUserManager.cs [Design]",
+              "DocumentMoniker": "F:\\CLOUD\\GOOGLE DRIVE\\PRINTER-FILES\\PROJECT\\DOLE ARCHON SYSTEM 2 for HITACHI IJP\\SOURCE\\ARCHON SYSTEM\\ARCHON SYSTEM\\frmUserManager.cs",
+              "RelativeDocumentMoniker": "ARCHON SYSTEM\\frmUserManager.cs",
+              "ToolTip": "D:\\CLOUD\\PRINTER\\PROJECT\\DOLE ARCHON SYSTEM 2 for HITACHI IJP\\SOURCE\\ARCHON SYSTEM\\ARCHON SYSTEM\\frmUserManager.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T05:46:47.197Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
