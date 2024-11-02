@@ -23,9 +23,10 @@ namespace ARCHON_SYSTEM
 
             FILL_COMBOS();
 
-            //listUSER.DataSource = Archon_Library.dbLibrary.archDBTable;
-            //listUSER.DisplayMember = "fdUserName";
-            //listUSER.ValueMember = "fdID";
+
+            listUSER.DataSource = Archon_Library.dbLibrary.PROCESS_LIST("SELECT * FROM tblUSERS");
+            listUSER.DisplayMember = "fdUserName";
+            listUSER.ValueMember = "fdID";
         }
 
         int iSelectedIndex = 0;

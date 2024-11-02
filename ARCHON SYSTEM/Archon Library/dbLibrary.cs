@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 using System.Data.SQLite;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace ARCHON_SYSTEM.Archon_Library
 {
@@ -37,6 +38,17 @@ namespace ARCHON_SYSTEM.Archon_Library
                 return false;
             }
         }
+
+        public static DataTable PROCESS_LIST(String strQuery)
+        {
+            DataTable PL_DataTable = new DataTable();
+            SQLiteCommand PL_Command = new SQLiteCommand(strQuery, archDBCONN);
+            SQLiteDataAdapter PL_DataAdapter = new SQLiteDataAdapter(PL_Command);
+            PL_DataAdapter.Fill(PL_DataTable);
+
+            return PL_DataTable;
+        }
+
 
         public bool dbArchonQuerry(String strQuery, String strActionType)
         {
