@@ -108,7 +108,6 @@ namespace ARCHON_SYSTEM.Archon_Library
             String qryACTION,
             String strID,
             String strUserName,
-            String strUserID,
             String strFullName,
             String strDepartment,
             String strUserType,
@@ -151,31 +150,31 @@ namespace ARCHON_SYSTEM.Archon_Library
 
             if (qryACTION=="UPDATE")
             {
-                strArchonQuerry = "UPDATE tblUsers " +
+                strArchonQuerry = @"UPDATE tblUsers " +
                                                 "SET " +
-                                                            "fdUserName = @UserName, " +
-                                                            "fdFullName = @FullName, " +
-                                                            "fdDepartment = @Department, " +
-                                                            "fdUserType = @UserType, " +
-                                                            "fdDateReg = @DateReg, " +
-                                                            "fdPasswordExp = @PasswordExp, " +
-                                                            "fdPassword = @Password, " +
-                                                            "fdStatus = @Status, " +
-                                                            "fdRemarks = @Remarks, " +
-                                                            "fdACC01 = @ACC01, " +
-                                                            "fdACC02 = @ACC02, " +
-                                                            "fdACC03 = @ACC03, " +
-                                                            "fdACC04 = @ACC04, " +
-                                                            "fdACC05 = @ACC05, " +
-                                                            "fdACC06 = @ACC06, " +
-                                                            "fdACC07 = @ACC07, " +
-                                                            "fdACC08 = @ACC08, " +
-                                                            "fdACC09 = @ACC09 " +
-                                                            "WHERE fdID = @ID;";
+                                                            "fdUserName = '" + strUserName + "', " +
+                                                            "fdFullName = '" + strFullName + "', " +
+                                                            "fdDepartment = '" + strDepartment + "', " +
+                                                            "fdUserType = '" + strUserType + "', " +
+                                                            "fdDateReg = '" + strDateRegistered + "', " +
+                                                            "fdPasswordExp = '" + strPasswordStat + "', " +
+                                                            "fdPassword = '" + strPassword + "', " +
+                                                            "fdStatus = '" + strUserStatus + "', " +
+                                                            "fdRemarks = '" + strRemarks + "', " +
+                                                            "fdACC01 = '" + strG1_V + strG1_A + strG1_E + strG1_D + "', " +
+                                                            "fdACC02 = '" + strG2_V + strG2_A + strG2_E + strG2_D + "', " +
+                                                            "fdACC03 = '" + strG3_V + strG3_A + strG3_E + strG3_D + "', " +
+                                                            "fdACC04 = '" + strG4_V + strG4_U + "', " +
+                                                            "fdACC05 = '" + strG5_V + strG5_P + strG5_U + "', " +
+                                                            "fdACC06 = '" + strG6_V + strG6_C + "', " +
+                                                            "fdACC07 = '" + strG7_V + "', " +
+                                                            "fdACC08 = '" + strG8_V + strG8_U + "', " +
+                                                            "fdACC09 = '" + strG9_V + strG9_A + strG9_E + strG9_D + "' " +
+                                                            "WHERE fdID LIKE '" + strID + "';";
             }
             else
             {
-                strArchonQuerry = "INSERT INTO tblUSERS " +
+                strArchonQuerry = @"INSERT INTO tblUSERS " +
                                                 "(" +
                                                             "fdID, " +
                                                             "fdUserName, " +
@@ -223,28 +222,9 @@ namespace ARCHON_SYSTEM.Archon_Library
 
             try
             {
-                using (archDBCommand = new SQLiteCommand(strArchonQuerry, archDBCONN))
+                using(archDBCommand = new SQLiteCommand(strArchonQuerry,archDBCONN))
                 {
-                    archDBCommand.Parameters.AddWithValue("@UserName", strUserName);
-                    archDBCommand.Parameters.AddWithValue("@FullName", strFullName);
-                    archDBCommand.Parameters.AddWithValue("@Department", strDepartment);
-                    archDBCommand.Parameters.AddWithValue("@UserType", strUserType);
-                    archDBCommand.Parameters.AddWithValue("@DateReg", strDateRegistered);
-                    archDBCommand.Parameters.AddWithValue("@PasswordExp", strPasswordStat);
-                    archDBCommand.Parameters.AddWithValue("@Password", strPassword);
-                    archDBCommand.Parameters.AddWithValue("@Status", strUserStatus.ToString());
-                    archDBCommand.Parameters.AddWithValue("@Remarks", strRemarks);
-                    archDBCommand.Parameters.AddWithValue("@ACC01", strG1_V + strG1_A + strG1_E + strG1_D);
-                    archDBCommand.Parameters.AddWithValue("@ACC02", strG2_V + strG2_A + strG2_E + strG2_D);
-                    archDBCommand.Parameters.AddWithValue("@ACC03", strG3_V + strG3_A + strG3_E + strG3_D);
-                    archDBCommand.Parameters.AddWithValue("@ACC04", strG4_V + strG4_U);
-                    archDBCommand.Parameters.AddWithValue("@ACC05", strG5_V + strG5_P + strG5_U);
-                    archDBCommand.Parameters.AddWithValue("@ACC06", strG6_V + strG6_C);
-                    archDBCommand.Parameters.AddWithValue("@ACC07", strG7_V);
-                    archDBCommand.Parameters.AddWithValue("@ACC08", strG8_V + strG8_U);
-                    archDBCommand.Parameters.AddWithValue("@ACC09", strG9_V + strG9_A + strG9_E + strG9_D);
-
-                    archDBCommand.ExecuteNonQuery();
+                    int archRows = archDBCommand.ExecuteNonQuery();
                 }
 
                 return true;
