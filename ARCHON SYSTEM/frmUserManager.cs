@@ -17,15 +17,18 @@ namespace ARCHON_SYSTEM
         Archon_Library.archContLibrary capLibrary = new Archon_Library.archContLibrary();
         Archon_Library.dbLibrary dbLibrary = new Archon_Library.dbLibrary();
 
+        String strUserID = null;
+
         public frmUserManager()
         {
             InitializeComponent();
 
             FILL_COMBOS();
 
-            //listUSER.DataSource = Archon_Library.dbLibrary.archDBTable;
-            //listUSER.DisplayMember = "fdUserName";
-            //listUSER.ValueMember = "fdID";
+
+            listUSER.DataSource = Archon_Library.dbLibrary.PROCESS_LIST("SELECT * FROM tblUSERS");
+            listUSER.DisplayMember = "fdUserName";
+            listUSER.ValueMember = "fdID";
         }
 
         int iSelectedIndex = 0;
@@ -312,8 +315,11 @@ namespace ARCHON_SYSTEM
 
             if(dbLibrary.dbArchonQuerry(userSearchQuery,"SEARCH RECORD") == true)
             {
-                txtUserName.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdUserName"].ToString();
+                strUserID = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdID"].ToString();
+
                 txtUserID.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdID"].ToString();
+
+                txtUserName.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdUserName"].ToString();
                 txtFullName.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdFullName"].ToString();
                 cboDepartment.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdDepartment"].ToString();
 
@@ -370,6 +376,8 @@ namespace ARCHON_SYSTEM
                 strACCESS07 = G7V;
                 strACCESS08 = G8V + G8U;
                 strACCESS09 = G9V + G9A + G9E + G9D;
+
+                
 
                 PROCESS_CHECKS("READ");
             }
@@ -377,71 +385,56 @@ namespace ARCHON_SYSTEM
 
         private void RECORD_UPDATER(String strUID)
         {
-            String userSearchQuery = "UPDATE * FROM tblUsers WHERE fdID LIKE '" + strUID + "';";
+            Boolean updateOK = dbLibrary.dbArchonCRUDQuerry(
+                                            "UPDATE",
+                                            txtUserID.Text,
+                                            txtUserName.Text,
+                                            txtFullName.Text,
+                                            cboDepartment.Text,
+                                            cboUserType.Text,
+                                            txtDateRegistered.Text,
+                                            int.Parse(txtPasswordStat.Text),
+                                            txtPassword.Text,
+                                            cboUserStatus.Text,
+                                            txtRemarks.Text,
+                                            G1V,
+                                            G1A,
+                                            G1E,
+                                            G1D,
+                                            G2V,
+                                            G2A,
+                                            G2E,
+                                            G2D,
+                                            G3V,
+                                            G3A,
+                                            G3E,
+                                            G3D,
+                                            G4V,
+                                            G4U,
+                                            G5V,
+                                            G5P,
+                                            G5U,
+                                            G6V,
+                                            G6C,
+                                            G7V,
+                                            G8V,
+                                            G8U,
+                                            G9V,
+                                            G9A,
+                                            G9E,
+                                            G9D
 
-            if (dbLibrary.dbArchonQuerry(userSearchQuery, "SEARCH RECORD") == true)
+                );
+
+            if (updateOK == true)
             {
-                txtUserName.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdUserName"].ToString();
-                txtUserID.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdID"].ToString();
-                txtFullName.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdFullName"].ToString();
-                cboDepartment.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdDepartment"].ToString();
+                MessageBox.Show("Awesome! You have successfully updated the User with an ID number: '" + strUserID + "'", "User ID: '" + strUserID + "' was updated successfully!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SETUP_CONTROLS("viewSTATE");
+                RECORD_SELECTOR(strUserID);
 
-                cboUserType.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdUserType"].ToString();
-                txtDateRegistered.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdDateReg"].ToString();
-                txtPasswordStat.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdPasswordEXP"].ToString();
-
-                txtPassword.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdPassword"].ToString();
-                txtCPassword.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdPassword"].ToString();
-                txtRemarks.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdRemarks"].ToString();
-                cboUserStatus.Text = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdStatus"].ToString();
-
-                G1V = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC01"].ToString().Substring(0, 1);
-                G1A = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC01"].ToString().Substring(1, 1);
-                G1E = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC01"].ToString().Substring(2, 1);
-                G1D = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC01"].ToString().Substring(3, 1);
-
-                G2V = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC02"].ToString().Substring(0, 1);
-                G2A = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC02"].ToString().Substring(1, 1);
-                G2E = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC02"].ToString().Substring(2, 1);
-                G2D = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC02"].ToString().Substring(3, 1);
-
-                G3V = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC03"].ToString().Substring(0, 1);
-                G3A = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC03"].ToString().Substring(1, 1);
-                G3E = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC03"].ToString().Substring(2, 1);
-                G3D = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC03"].ToString().Substring(3, 1);
-
-                G4V = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC04"].ToString().Substring(0, 1);
-                G4U = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC04"].ToString().Substring(1, 1);
-
-                G5V = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC05"].ToString().Substring(0, 1);
-                G5P = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC05"].ToString().Substring(1, 1);
-                G5U = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC05"].ToString().Substring(2, 1);
-
-                G6V = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC06"].ToString().Substring(0, 1);
-                G6C = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC06"].ToString().Substring(1, 1);
-
-                G7V = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC07"].ToString().Substring(0, 1);
-
-                G8V = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC08"].ToString().Substring(0, 1);
-                G8U = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC08"].ToString().Substring(1, 1);
-
-                G9V = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC09"].ToString().Substring(0, 1);
-                G9A = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC09"].ToString().Substring(1, 1);
-                G9E = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC09"].ToString().Substring(2, 1);
-                G9D = Archon_Library.dbLibrary.archDBTable.Rows[0]["fdACC09"].ToString().Substring(3, 1);
-
-                strACCESS01 = G1V + G1A + G1E + G1D;
-                strACCESS02 = G2V + G2A + G2E + G2D;
-                strACCESS03 = G3V + G3A + G3E + G3D;
-                strACCESS04 = G4V + G4U;
-                strACCESS05 = G5V + G5P + G5U;
-                strACCESS06 = G6V + G6C;
-                strACCESS07 = G7V;
-                strACCESS08 = G8V + G8U;
-                strACCESS09 = G9V + G9A + G9E + G9D;
+            }
 
                 PROCESS_CHECKS("READ");
-            }
         }
 
         private void CLEAR_ACCESS()
@@ -565,16 +558,16 @@ namespace ARCHON_SYSTEM
 
                 CheckBox[] chkACCESSBOX =
                 {
-                    G1_A,
                     G1_V,
+                    G1_A,
                     G1_E,
                     G1_D,
-                    G2_A,
                     G2_V,
+                    G2_A,
                     G2_E,
                     G2_D,
-                    G3_A,
                     G3_V,
+                    G3_A,
                     G3_E,
                     G3_D,
                     G4_V,
@@ -587,10 +580,10 @@ namespace ARCHON_SYSTEM
                     G7_V,
                     G8_V,
                     G8_U,
+                    G9_V,
                     G9_A,
                     G9_E,
-                    G9_D,
-                    G9_V
+                    G9_D
             };
 
                 for (int myCheck = 0; myCheck < ALL_CHECKER.Length; myCheck++)
@@ -604,7 +597,6 @@ namespace ARCHON_SYSTEM
                         chkACCESSBOX[myCheck].Checked = false;
                     }
                 }
-                //MessageBox.Show(ALL_CHECKER);
             }
             else
             {
@@ -994,7 +986,6 @@ namespace ARCHON_SYSTEM
                     "SAVE",
                     txtUserID.Text,
                     txtUserName.Text,
-                    txtUserID.Text,
                     txtFullName.Text,
                     cboDepartment.Text,
                     cboUserType.Text,
@@ -1045,8 +1036,9 @@ namespace ARCHON_SYSTEM
                 if(cmdADD.Text=="UPDATE")
                 {
 
-                    SETUP_CONTROLS("viewSTATE");
-                    RECORD_SELECTOR(listUSER.SelectedValue.ToString());
+                    SETUP_CONTROLS("maintainSTATE");
+                    RECORD_UPDATER(txtUserID.Text);
+                    //RECORD_SELECTOR(listUSER.SelectedValue.ToString());
 
                 }
                 else
